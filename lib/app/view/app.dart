@@ -29,7 +29,7 @@ class App extends StatelessWidget {
       navigatorObservers: [
         GetIt.I.get<FirebaseAnalyticsObserver>(),
       ],
-      home: const ProfileScreen(),
+      home: const PromptScreen(),
     );
   }
 }

@@ -4,6 +4,7 @@
     "@appTitle": {
         "description": "앱 제목"
     },
+    "underConstruction": "준비중입니다.",
     "showCompanyTitle": "앱 이름을 보려면 스위치를 누르세요!",
   "profileMailSubjectKey": "subject",
   "profileMailSubjectValue": "안녕하세요.",
