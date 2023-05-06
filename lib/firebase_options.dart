@@ -42,7 +42,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: dotenv.get(_firebaseWebMessagingSenderId),
     projectId: dotenv.get(_firebaseWebProjectId),
     authDomain: dotenv.get(_firebaseWebAuthDomain),
-    databaseURL: dotenv.get(_firebaseWebDatabaseUrl),
     storageBucket: dotenv.get(_firebaseWebStorageBucket),
     measurementId: dotenv.get(_firebaseWebMeasurementId),
   );
@@ -54,7 +53,6 @@ class DefaultFirebaseOptions {
         String.fromEnvironment(_firebaseWebMessagingSenderId),
     _firebaseWebProjectId: String.fromEnvironment(_firebaseWebProjectId),
     _firebaseWebAuthDomain: String.fromEnvironment(_firebaseWebAuthDomain),
-    _firebaseWebDatabaseUrl: String.fromEnvironment(_firebaseWebDatabaseUrl),
     _firebaseWebStorageBucket:
         String.fromEnvironment(_firebaseWebStorageBucket),
     _firebaseWebMeasurementId:
@@ -86,7 +84,6 @@ class DefaultFirebaseOptions {
   static const _firebaseWebMessagingSenderId = 'WEB_MESSAGING_SENDER_ID';
   static const _firebaseWebProjectId = 'WEB_PROJECT_ID';
   static const _firebaseWebAuthDomain = 'WEB_AUTH_DOMAIN';
-  static const _firebaseWebDatabaseUrl = 'WEB_DATABASE_URL';
   static const _firebaseWebStorageBucket = 'WEB_STORAGE_BUCKET';
   static const _firebaseWebMeasurementId = 'WEB_MEASUREMENT_ID';
 }
