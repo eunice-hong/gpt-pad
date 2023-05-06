@@ -1,5 +1,5 @@
 import 'package:eunice_template/l10n/l10n.dart';
-import 'package:eunice_template/profile/screen/profile_screen.dart';
+import 'package:eunice_template/prompt/prompt_screen.dart';
 import 'package:eunice_ui/ui.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +19,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.standard,
+      darkTheme: AppTheme.dark,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
