@@ -1,0 +1,33 @@
+buildscript {
+    apply from: "dependency.gradle"
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath deps.classpath.build_gradle
+        classpath deps.classpath.kotlin
+        classpath deps.classpath.google
+        classpath deps.classpath.crashlytics
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

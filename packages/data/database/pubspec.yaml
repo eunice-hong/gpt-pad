@@ -1,0 +1,21 @@
+name: eunice_database
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  eunice_datasource:
+    path: ../datasource
+  eunice_entity:
+    path: ../../domain/entity
+  flutter:
+    sdk: flutter
+  sqflite: ^2.0.3+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: 4.0.0+1

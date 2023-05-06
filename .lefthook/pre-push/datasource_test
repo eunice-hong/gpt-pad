@@ -1,0 +1,5 @@
+shopt -s nullglob globstar
+
+cd packages/data/datasource
+dart pub get
+dart run test **/datasource/**/*_test.dart -r expanded

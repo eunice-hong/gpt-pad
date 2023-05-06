@@ -1,0 +1,5 @@
+shopt -s nullglob globstar
+
+cd packages/domain/usecase
+dart pub get
+dart run test **/usecase/**/*_test.dart -r expanded

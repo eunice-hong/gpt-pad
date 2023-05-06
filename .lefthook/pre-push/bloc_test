@@ -1,0 +1,3 @@
+shopt -s nullglob globstar
+
+flutter test **/bloc/**/*_test.dart -r expanded

@@ -1,0 +1,28 @@
+ext {
+    versions = [
+            classpath: [
+                    build_gradle: "7.3.0",
+                    google      : "4.3.14",
+                    crashlytics : "2.9.2",
+            ],
+            kotlin   : "1.6.21",
+            sdk      : [
+                    min    : 26,
+                    target : 33,
+                    compile: 33,
+            ],
+            ndk      : "23.1.7779620",
+    ]
+    deps = [
+            classpath: [
+                    build_gradle: "com.android.tools.build:gradle:$versions.classpath.build_gradle",
+                    kotlin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+                    google      : "com.google.gms:google-services:$versions.classpath.google",
+                    crashlytics : "com.google.firebase:firebase-crashlytics-gradle:$versions.classpath.crashlytics"
+            ],
+            kotlin   : [
+                    stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+                    reflect: "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin",
+            ],
+    ]
+}
