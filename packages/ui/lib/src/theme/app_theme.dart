@@ -6,8 +6,21 @@ class AppTheme {
   static ThemeData get standard {
     return ThemeData(
       colorScheme: const ColorScheme.light(
-        primary: AppColors.seaSerpent,
-        secondary: AppColors.mediumSkyBlue,
+        primary: AppColors.springLeaf,
+        secondary: AppColors.blueHorizon,
+        background: AppColors.pearlGray,
+      ),
+      textTheme: _textTheme,
+    );
+  }
+
+  /// Dark [ThemeData] for App UI
+  static ThemeData get dark {
+    return ThemeData(
+      colorScheme: const ColorScheme.dark(
+        primary: AppColors.springLeaf,
+        secondary: AppColors.blueHorizon,
+        background: AppColors.midnightBlue,
       ),
       textTheme: _textTheme,
     );
