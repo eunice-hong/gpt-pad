@@ -4,7 +4,16 @@
   "@appTitle": {
     "description": "App title"
   },
+  "confirm": "Confirm",
+  "cancel": "Cancel",
   "underConstruction": "Under construction",
+  "apiKeyInputDialogButton": "Add API Key",
+  "apiKeyInputDialogTitle": "Setup your API key",
+  "apiKeyInputDialogInputLabel": "API Key",
+  "apiKeyInputDialogKeyLinkText": "Get your personal API key here.",
+  "apiKeyInputDialogKeyLink": "here",
+  "openAiApiKeyAvailable": "Success to load models available.",
+  "openAiApiKeyUnavailable": "Fail to load models available.",
   "showCompanyTitle": "Turn on the switch to see the name of this App!",
   "profileMailSubjectKey": "subject",
   "profileMailSubjectValue": "Hi Eunice, I found you on your website!",
