@@ -15,7 +15,7 @@ jobs:
       - run: flutter --version
       - run: flutter pub get
       - run: |
-          flutter build web --target lib/main_production.dart --web-renderer html \
+          flutter build web --target lib/main_production.dart --release --web-renderer html\
             --dart-define WEB_API_KEY=${{ secrets.WEB_API_KEY }} \
             --dart-define WEB_APP_ID=${{ secrets.WEB_APP_ID }} \
             --dart-define WEB_MESSAGING_SENDER_ID=${{ secrets.WEB_MESSAGING_SENDER_ID }} \
@@ -35,9 +35,9 @@ jobs:
           name: release-web-build
           path: release-web-build
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy --only hosting --public release-web-build
-        env:
-          GCP_SA_KEY: '${{ secrets.FIREBASE_SERVICE_GCP_SA_KEY }}'
-          PROJECT_ID: eunice-hong
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          channelId: live
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GPTPAD_DEV }}'
+          projectId: gptpad-dev
