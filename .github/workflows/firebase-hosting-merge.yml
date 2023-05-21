@@ -6,8 +6,14 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read # needed for the checkout action
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.7.6'

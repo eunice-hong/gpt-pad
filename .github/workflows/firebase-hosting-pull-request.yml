@@ -7,9 +7,24 @@ jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read # needed for the checkout action
     steps:
-      - uses: actions/checkout@v3
-      - run: 'flutter pub get && flutter build web --release '
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - run: flutter pub get
+      - run: |
+          flutter build web --target lib/main_production.dart --release --web-renderer html \
+            --dart-define WEB_API_KEY=${{ secrets.WEB_API_KEY }} \
+            --dart-define WEB_APP_ID=${{ secrets.WEB_APP_ID }} \
+            --dart-define WEB_MESSAGING_SENDER_ID=${{ secrets.WEB_MESSAGING_SENDER_ID }} \
+            --dart-define WEB_PROJECT_ID=${{ secrets.WEB_PROJECT_ID }} \
+            --dart-define WEB_AUTH_DOMAIN=${{ secrets.WEB_AUTH_DOMAIN }} \
+            --dart-define WEB_STORAGE_BUCKET=${{ secrets.WEB_STORAGE_BUCKET }} \
+            --dart-define WEB_MEASUREMENT_ID=${{ secrets.WEB_MEASUREMENT_ID }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
