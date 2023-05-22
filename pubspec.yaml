@@ -37,7 +37,7 @@ dependencies:
   url_launcher: 6.1.10
 
 dev_dependencies:
-  bloc_test: ^9.1.0
+  bloc_test: ^9.1.2
   build_runner: ^2.2.0
   flutter_test:
     sdk: flutter
